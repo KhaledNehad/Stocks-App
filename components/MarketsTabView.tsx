@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import {
   TabView,
@@ -28,8 +28,8 @@ const MarketCapTab = () => (
 );
 
 const TabViewScroll = () => {
-  const [index, onIndexChange] = React.useState(1);
-  const [routes] = React.useState([
+  const [index, onIndexChange] = useState(1);
+  const [routes] = useState([
     { key: 'mainMarket', title: 'Main Market' },
     { key: 'juniorMarket', title: 'Junior Market' },
     { key: 'fxRates', title: 'FX Rates' },

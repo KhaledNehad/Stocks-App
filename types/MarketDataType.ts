@@ -12,9 +12,7 @@ export type StockData = {
   day_high: number;
   day_low: number;
   day_open: number;
-  weekChanges: {
-    price: PriceData[];
-  };
+  weekChanges: PriceData[];
   previous_close_price: number;
   day_change: number;
 };
