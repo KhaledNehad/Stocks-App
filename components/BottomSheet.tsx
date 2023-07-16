@@ -1,5 +1,5 @@
-import React, { useCallback, useMemo } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { useMemo } from 'react';
+import { View, StyleSheet } from 'react-native';
 import { BottomSheetModal } from '@gorhom/bottom-sheet';
 import ModalView from './ModalView';
 import { StockData } from '../types/MarketDataType';

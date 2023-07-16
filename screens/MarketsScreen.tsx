@@ -6,8 +6,7 @@ import {
   StatusBar,
   TextInput,
 } from 'react-native';
-import { COLORS, DATA, FONTS, SIZES } from '../constants';
-import MarketsHeader from '../components/MarketsHeader';
+import { COLORS, FONTS, SIZES } from '../constants';
 import MarketsTabView from '../components/MarketsTabView';
 import { MaterialIcons } from '@expo/vector-icons';
 

@@ -1,5 +1,4 @@
 import { View, Text, SafeAreaView, StyleSheet, StatusBar } from 'react-native';
-import {} from '@react-navigation/native';
 import { SIZES } from '../constants';
 
 export default function PortfolioScreen() {

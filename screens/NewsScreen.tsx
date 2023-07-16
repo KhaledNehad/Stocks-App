@@ -1,5 +1,5 @@
 import { View, Text, SafeAreaView, StatusBar, StyleSheet } from 'react-native';
-import { COLORS, FONTS, SIZES } from '../constants';
+import { SIZES } from '../constants';
 
 export default function NewsScreen() {
   return (

@@ -16,8 +16,10 @@ type State = NavigationState<{
 }>;
 
 const MainMarketTab = () => (
-  <View style={{ flex: 1 }}>
-    <JuniorMarketTab />
+  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Text style={{ fontFamily: FONTS.bold, fontSize: SIZES.large }}>
+      Main Market
+    </Text>
   </View>
 );
 
