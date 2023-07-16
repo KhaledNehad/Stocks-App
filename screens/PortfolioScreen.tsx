@@ -1,17 +1,12 @@
 import { View, Text, SafeAreaView, StyleSheet, StatusBar } from 'react-native';
-import { DATA, SIZES } from '../constants';
-import { useState } from 'react';
-import Charts from '../components/Charts';
+import {} from '@react-navigation/native';
+import { SIZES } from '../constants';
 
 export default function PortfolioScreen() {
-  const [data, setData] = useState(DATA);
-
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        {data.map((item) => (
-          <Charts key={item.stockSymbol} weekChanges={item.weekChanges} />
-        ))}
+        <Text>Portfolio Screen</Text>
       </View>
     </SafeAreaView>
   );
@@ -21,5 +16,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: StatusBar.currentHeight! + SIZES.small,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

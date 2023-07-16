@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import {
   TabView,
   TabBar,
@@ -7,7 +7,7 @@ import {
   NavigationState,
   SceneRendererProps,
 } from 'react-native-tab-view';
-import { COLORS } from '../constants';
+import { COLORS, FONTS, SIZES } from '../constants';
 import JuniorMarketTab from './JuniorMarketTab';
 
 type State = NavigationState<{
@@ -16,15 +16,29 @@ type State = NavigationState<{
 }>;
 
 const MainMarketTab = () => (
-  <View style={{ flex: 1, backgroundColor: '#ff4081' }} />
+  <View style={{ flex: 1 }}>
+    <JuniorMarketTab />
+  </View>
 );
 
 const FxRatesTab = () => (
-  <View style={{ flex: 1, backgroundColor: '#4432f1' }} />
+  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Text style={{ fontFamily: FONTS.bold, fontSize: SIZES.large }}>
+      FX Rates
+    </Text>
+  </View>
 );
-const FundTab = () => <View style={{ flex: 1, backgroundColor: '#443321' }} />;
+const FundTab = () => (
+  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Text style={{ fontFamily: FONTS.bold, fontSize: SIZES.large }}>Fund</Text>
+  </View>
+);
 const MarketCapTab = () => (
-  <View style={{ flex: 1, backgroundColor: '#44e321' }} />
+  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Text style={{ fontFamily: FONTS.bold, fontSize: SIZES.large }}>
+      Market Cap
+    </Text>
+  </View>
 );
 
 const TabViewScroll = () => {

@@ -1,5 +1,6 @@
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
+import React from 'react';
 
 import { useTheme } from 'react-native-paper';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
@@ -12,6 +13,12 @@ import { COLORS } from './constants';
 import PortfolioScreen from './screens/PortfolioScreen';
 import NewsScreen from './screens/NewsScreen';
 import MarketsScreen from './screens/MarketsScreen';
+
+export type RootStackParamList = {
+  Portfolio: undefined;
+  Markets: undefined;
+  News: undefined;
+};
 
 export default function App() {
   const Tab = createMaterialBottomTabNavigator();

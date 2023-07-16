@@ -14,5 +14,8 @@ export type StockData = {
   day_open: number;
   weekChanges: PriceData[];
   previous_close_price: number;
+  lastTradePrice: number;
+  outstandingShares: number;
+  marketCap: number;
   day_change: number;
 };
