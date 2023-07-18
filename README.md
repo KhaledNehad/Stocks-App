@@ -22,7 +22,8 @@
       - Current price
       - Percentage Gain
 
-    - create function to convert price in dollars.
+    - Create function to convert price in dollars.
+    - Create a dummy data for the stocks.
     - Uncompleted Graph view for the stock.
     - Change the UX to open the Stock details in a sheet instead of a new page.
 
