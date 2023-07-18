@@ -1,6 +1,5 @@
-import { View, FlatList, StyleSheet } from 'react-native';
+import { View, FlatList, Text, StyleSheet } from 'react-native';
 import React, { useRef, useState } from 'react';
-import { DATA } from '../constants';
 import MarketItemList from './MarketItemList';
 import BottomSheet from '../components/BottomSheet';
 import {
@@ -8,9 +7,10 @@ import {
   BottomSheetModal,
 } from '@gorhom/bottom-sheet';
 import { StockData } from '../types/MarketDataType';
+import { useDataStore } from '../util/DataStore';
 
 const JuniorMarketTab = () => {
-  const [data, setData] = useState(DATA);
+  const { data, isLoading, error } = useDataStore();
 
   const [selectedCompanyData, setSelectedCompanyData] =
     useState<StockData | null>(null);
@@ -21,6 +21,14 @@ const JuniorMarketTab = () => {
     setSelectedCompanyData(item);
     BottomSheetModalRef.current?.present();
   };
+
+  if (isLoading) {
+    return <Text>Loading...</Text>;
+  }
+
+  if (error) {
+    return <Text>Error: {error.message}</Text>;
+  }
 
   return (
     <View style={styles.container}>
