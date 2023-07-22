@@ -11,8 +11,6 @@ import NewsScreen from './NewsScreen';
 import MarketsScreen from './MarketsScreen';
 import { COLORS } from '../constants';
 const Tab = createMaterialBottomTabNavigator();
-const HomeStack = createNativeStackNavigator();
-
 const portfolioIcon = ({ color }: { color: string }) => (
     <Feather name='pie-chart' size={26} color={color} />
   );
