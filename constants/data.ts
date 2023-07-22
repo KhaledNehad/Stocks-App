@@ -330,4 +330,4 @@ export const DATA = [
     marketCap: 6779.33,
     day_change: 2.09,
   },
-];
+]

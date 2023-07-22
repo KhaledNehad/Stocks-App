@@ -1,5 +1,6 @@
-import { View, Text, SafeAreaView, StyleSheet, StatusBar } from 'react-native';
-import { SIZES } from '../constants';
+import { View, Text, SafeAreaView, StyleSheet, StatusBar } from 'react-native'
+import { SIZES } from '../constants'
+import React from 'react'
 
 export default function PortfolioScreen() {
   return (
@@ -8,7 +9,7 @@ export default function PortfolioScreen() {
         <Text>Portfolio Screen</Text>
       </View>
     </SafeAreaView>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -18,4 +19,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+})

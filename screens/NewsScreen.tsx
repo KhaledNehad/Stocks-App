@@ -1,5 +1,6 @@
-import { View, Text, SafeAreaView, StatusBar, StyleSheet } from 'react-native';
-import { SIZES } from '../constants';
+import { View, Text, SafeAreaView, StatusBar, StyleSheet } from 'react-native'
+import { SIZES } from '../constants'
+import React from 'react'
 
 export default function NewsScreen() {
   return (
@@ -8,7 +9,7 @@ export default function NewsScreen() {
         <Text>News Screen</Text>
       </View>
     </SafeAreaView>
-  );
+  )
 }
 const styles = StyleSheet.create({
   container: {
@@ -17,4 +18,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+})

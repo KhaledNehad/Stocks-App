@@ -1,19 +1,20 @@
-import { useState } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { useState } from 'react'
+import { StyleSheet, View, Text } from 'react-native'
+import React from 'react'
 import {
   TabView,
   TabBar,
   SceneMap,
   NavigationState,
   SceneRendererProps,
-} from 'react-native-tab-view';
-import { COLORS, FONTS, SIZES } from '../constants';
-import JuniorMarketTab from './JuniorMarketTab';
+} from 'react-native-tab-view'
+import { COLORS, FONTS, SIZES } from '../constants'
+import JuniorMarketTab from './JuniorMarketTab'
 
 type State = NavigationState<{
-  key: string;
-  title: string;
-}>;
+  key: string
+  title: string
+}>
 
 const MainMarketTab = () => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -21,7 +22,7 @@ const MainMarketTab = () => (
       Main Market
     </Text>
   </View>
-);
+)
 
 const FxRatesTab = () => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -29,32 +30,32 @@ const FxRatesTab = () => (
       FX Rates
     </Text>
   </View>
-);
+)
 const FundTab = () => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
     <Text style={{ fontFamily: FONTS.bold, fontSize: SIZES.large }}>Fund</Text>
   </View>
-);
+)
 const MarketCapTab = () => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
     <Text style={{ fontFamily: FONTS.bold, fontSize: SIZES.large }}>
       Market Cap
     </Text>
   </View>
-);
+)
 
 const TabViewScroll = () => {
-  const [index, onIndexChange] = useState(1);
+  const [index, onIndexChange] = useState(1)
   const [routes] = useState([
     { key: 'mainMarket', title: 'Main Market' },
     { key: 'juniorMarket', title: 'Junior Market' },
     { key: 'fxRates', title: 'FX Rates' },
     { key: 'fund', title: 'Fund' },
     { key: 'marketCapTab', title: 'Market Cap' },
-  ]);
+  ])
 
   const renderTabBar = (
-    props: SceneRendererProps & { navigationState: State }
+    props: SceneRendererProps & { navigationState: State },
   ) => (
     <TabBar
       {...props}
@@ -64,7 +65,7 @@ const TabViewScroll = () => {
       labelStyle={styles.label}
       tabStyle={styles.tabStyle}
     />
-  );
+  )
 
   const renderScene = SceneMap({
     mainMarket: MainMarketTab,
@@ -72,7 +73,7 @@ const TabViewScroll = () => {
     fxRates: FxRatesTab,
     fund: FundTab,
     marketCapTab: MarketCapTab,
-  });
+  })
 
   return (
     <TabView
@@ -84,12 +85,12 @@ const TabViewScroll = () => {
       renderTabBar={renderTabBar}
       onIndexChange={onIndexChange}
     />
-  );
-};
+  )
+}
 
-TabViewScroll.title = 'Scrollable tab bar (auto width)';
+TabViewScroll.title = 'Scrollable tab bar (auto width)'
 
-export default TabViewScroll;
+export default TabViewScroll
 
 const styles = StyleSheet.create({
   tabbar: {
@@ -104,4 +105,4 @@ const styles = StyleSheet.create({
   tabStyle: {
     width: 'auto',
   },
-});
+})

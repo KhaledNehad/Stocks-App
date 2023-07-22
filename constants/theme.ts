@@ -1,12 +1,12 @@
-import { PixelRatio } from 'react-native';
+import { PixelRatio } from 'react-native'
 
-const fontScale = PixelRatio.getFontScale();
+const fontScale = PixelRatio.getFontScale()
 export const SIZES = {
   small: 9 * fontScale,
   medium: 14 * fontScale,
   large: 18 * fontScale,
   xLarge: 24 * fontScale,
-};
+}
 
 export const COLORS = {
   primaryColor: '#2c53f5',
@@ -18,7 +18,7 @@ export const COLORS = {
   success: '#28a745',
   danger: '#dc3545',
   secondaryContainer: 'transparent',
-};
+}
 
 export const FONTS = {
   bold: 'InterBold',
@@ -26,4 +26,4 @@ export const FONTS = {
   medium: 'InterMedium',
   regular: 'InterRegular',
   light: 'InterLight',
-};
+}

@@ -1,1 +1,1 @@
-declare module '@rainbow-me/animated-charts';
+declare module '@rainbow-me/animated-charts'

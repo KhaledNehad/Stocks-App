@@ -1,22 +1,27 @@
-import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import React from 'react'
+import { Text, TouchableOpacity } from 'react-native'
 
 type ButtonProps = {
-  stylesText?: object;
-  title?: string;
-  stylesButton?: object;
-  onPress?: () => void;
-};
+  stylesText?: object
+  title?: string
+  stylesButton?: object
+  onPress?: () => void
+}
 
-const Button: React.FC<ButtonProps> = ({ stylesText, title, stylesButton, onPress }) => {
+const Button: React.FC<ButtonProps> = ({
+  stylesText,
+  title,
+  stylesButton,
+  onPress,
+}) => {
   const RenderButtonText = () => {
-    return <Text style={stylesText}>{title && title}</Text>;
-  };
+    return <Text style={stylesText}>{title && title}</Text>
+  }
   return (
     <TouchableOpacity style={stylesButton} onPress={onPress}>
       <RenderButtonText />
     </TouchableOpacity>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button
