@@ -1,93 +1,66 @@
-import { useFonts } from 'expo-font';
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import { useFonts } from 'expo-font'
+import { StatusBar } from 'expo-status-bar'
+import React from 'react'
 
-import { useTheme } from 'react-native-paper';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { useTheme } from 'react-native-paper'
+import { createDrawerNavigator } from '@react-navigation/drawer'
+import { NavigationContainer } from '@react-navigation/native'
 
-import { NavigationContainer } from '@react-navigation/native';
+import MainTabScreen from './screens/MainTabScreen'
+import DrawerContent from './screens/DrawerContent'
+import { COLORS } from './constants'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
 
-import { Feather, Octicons, MaterialCommunityIcons } from '@expo/vector-icons';
+const DotsMenuIcon = () => {
+  return (
+    <MaterialCommunityIcons
+      name="dots-vertical"
+      size={24}
+      color={COLORS.white}
+      style={{ marginRight: 20 }}
+    />
+  )
+}
 
-import { COLORS } from './constants';
-import PortfolioScreen from './screens/PortfolioScreen';
-import NewsScreen from './screens/NewsScreen';
-import MarketsScreen from './screens/MarketsScreen';
-
-export type RootStackParamList = {
-  Portfolio: undefined;
-  Markets: undefined;
-  News: undefined;
-};
+const DrawerContentComponent = (props: any) => {
+  return <DrawerContent {...props} />
+}
 
 export default function App() {
-  const Tab = createMaterialBottomTabNavigator();
-  const theme = useTheme();
-  theme.colors.secondaryContainer = 'transparent';
+  const Drawer = createDrawerNavigator()
+  const theme = useTheme()
+  theme.colors.secondaryContainer = 'transparent'
   const [fontLoaded] = useFonts({
     InterBold: require('./assets/fonts/Inter-Bold.ttf'),
     InterLight: require('./assets/fonts/Inter-Light.ttf'),
     InterMedium: require('./assets/fonts/Inter-Medium.ttf'),
     InterRegular: require('./assets/fonts/Inter-Regular.ttf'),
     InterSemiBold: require('./assets/fonts/Inter-SemiBold.ttf'),
-  });
-  if (!fontLoaded) return null;
-
-  const portfolioIcon = ({ color }: { color: string }) => (
-    <Feather name='pie-chart' size={26} color={color} />
-  );
-
-  const marketsIcon = ({ color }: { color: string }) => (
-    <Octicons
-      name='arrow-switch'
-      size={26}
-      color={color}
-      style={{ transform: [{ rotate: '90deg' }] }}
-    />
-  );
-
-  const newsIcon = ({ color }: { color: string }) => (
-    <MaterialCommunityIcons
-      name='application-outline'
-      size={26}
-      color={color}
-    />
-  );
+  })
+  if (!fontLoaded) return null
 
   return (
     <NavigationContainer>
-      <Tab.Navigator
-        initialRouteName='Markets'
-        activeColor={COLORS.primaryColor}
-        inactiveColor={COLORS.black}
-      >
-        <Tab.Screen
-          name='Portfolio'
-          component={PortfolioScreen}
+      <Drawer.Navigator drawerContent={DrawerContentComponent}>
+        <Drawer.Screen
+          name="Home"
+          component={MainTabScreen}
           options={{
-            tabBarLabel: 'Portfolio',
-            tabBarIcon: portfolioIcon,
+            headerTintColor: COLORS.white,
+            headerTitle: '',
+            headerStyle: {
+              backgroundColor: COLORS.primaryColor,
+              elevation: 0,
+              shadowOpacity: 0,
+            },
+            headerTitleStyle: {
+              fontFamily: 'InterBold',
+            },
+            headerRight: DotsMenuIcon,
           }}
         />
-        <Tab.Screen
-          name='Markets'
-          component={MarketsScreen}
-          options={{
-            tabBarLabel: 'Markets',
-            tabBarIcon: marketsIcon,
-          }}
-        />
-
-        <Tab.Screen
-          name='News'
-          component={NewsScreen}
-          options={{
-            tabBarLabel: 'News',
-            tabBarIcon: newsIcon,
-          }}
-        />
-      </Tab.Navigator>
-      <StatusBar style='auto' />
+      </Drawer.Navigator>
+      <StatusBar style="light" />
     </NavigationContainer>
-  );
+  )
 }

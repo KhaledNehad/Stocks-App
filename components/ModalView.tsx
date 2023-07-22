@@ -1,21 +1,17 @@
-import { View, Text, StyleSheet, ScrollView, Dimensions } from 'react-native';
-import React from 'react';
-import { StockData } from '../types/MarketDataType';
-import { COLORS, FONTS, SIZES } from '../constants';
-import { formatCurrency } from '../util/formatCurrency';
-
-import { useNavigation } from '@react-navigation/native';
-import Button from './Button';
+import { View, Text, StyleSheet, ScrollView, Dimensions } from 'react-native'
+import React from 'react'
+import { StockData } from '../types/MarketDataType'
+import { COLORS, FONTS, SIZES } from '../constants'
+import { formatCurrency } from '../util/formatCurrency'
+import Button from './Button'
 
 type ModalViewProps = {
-  data: StockData | null;
-};
+  data: StockData | null
+}
 
-export const { width: SIZE } = Dimensions.get('window');
+export const { width: SIZE } = Dimensions.get('window')
 
 const ModalView: React.FC<ModalViewProps> = ({ data }) => {
-  const navigation = useNavigation();
-
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -69,17 +65,17 @@ const ModalView: React.FC<ModalViewProps> = ({ data }) => {
         </View>
         <View style={styles.action}>
           <Button
-            title='Add to Portfolio'
+            title="Add to Portfolio"
             stylesButton={styles.action_button}
             stylesText={styles.action_button_text}
           />
         </View>
       </View>
     </ScrollView>
-  );
-};
+  )
+}
 
-export default ModalView;
+export default ModalView
 
 const styles = StyleSheet.create({
   container: {
@@ -152,4 +148,4 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.semiBold,
     fontSize: SIZES.large,
   },
-});
+})

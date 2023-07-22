@@ -1,14 +1,13 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import React from 'react';
-import { StockData } from '../types/MarketDataType';
-import { COLORS, FONTS, SIZES } from '../constants';
-import Charts from './Charts';
-import { formatCurrency } from '../util/formatCurrency';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import React from 'react'
+import { StockData } from '../types/MarketDataType'
+import { COLORS, FONTS, SIZES } from '../constants'
+import { formatCurrency } from '../util/formatCurrency'
 
 type MarketItemListProps = {
-  data: StockData;
-  onPress: () => void;
-};
+  data: StockData
+  onPress: () => void
+}
 
 const MarketItemList: React.FC<MarketItemListProps> = ({ data, onPress }) => {
   return (
@@ -18,7 +17,7 @@ const MarketItemList: React.FC<MarketItemListProps> = ({ data, onPress }) => {
         <Text
           style={styles.grayTextStyle}
           numberOfLines={1}
-          ellipsizeMode='tail'
+          ellipsizeMode="tail"
         >
           {data.name}
         </Text>
@@ -38,10 +37,10 @@ const MarketItemList: React.FC<MarketItemListProps> = ({ data, onPress }) => {
         </Text>
       </View>
     </TouchableOpacity>
-  );
-};
+  )
+}
 
-export default MarketItemList;
+export default MarketItemList
 
 const styles = StyleSheet.create({
   container: {
@@ -77,4 +76,4 @@ const styles = StyleSheet.create({
   redTextStyle: {
     color: COLORS.danger,
   },
-});
+})

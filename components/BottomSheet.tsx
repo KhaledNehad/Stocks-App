@@ -1,15 +1,15 @@
-import React, { useMemo } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { BottomSheetModal } from '@gorhom/bottom-sheet';
-import ModalView from './ModalView';
-import { StockData } from '../types/MarketDataType';
+import React, { useMemo } from 'react'
+import { View, StyleSheet } from 'react-native'
+import { BottomSheetModal } from '@gorhom/bottom-sheet'
+import ModalView from './ModalView'
+import { StockData } from '../types/MarketDataType'
 
 type BottomSheetProps = {
-  dataToShow: StockData | null;
-};
+  dataToShow: StockData | null
+}
 const BottomSheet = React.forwardRef<BottomSheetModal, BottomSheetProps>(
   ({ dataToShow }, ref) => {
-    const snapPoints = useMemo(() => ['25%', '100%'], []);
+    const snapPoints = useMemo(() => ['25%', '100%'], [])
 
     return (
       <View>
@@ -19,10 +19,10 @@ const BottomSheet = React.forwardRef<BottomSheetModal, BottomSheetProps>(
           </View>
         </BottomSheetModal>
       </View>
-    );
-  }
-);
-export default BottomSheet;
+    )
+  },
+)
+export default BottomSheet
 
 const styles = StyleSheet.create({
   container: {
@@ -35,4 +35,4 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-});
+})

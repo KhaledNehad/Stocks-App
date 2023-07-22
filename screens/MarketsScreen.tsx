@@ -1,12 +1,13 @@
-import { SafeAreaView, StyleSheet, StatusBar } from 'react-native';
-import { COLORS, SIZES } from '../constants';
-import MarketsTabView from '../components/MarketsTabView';
-import MarketHeader from '../components/MarketsHeader';
-import Store from '../util/DataStore';
-import useFetchData from '../util/useFetchData';
+import { SafeAreaView, StyleSheet, StatusBar } from 'react-native'
+import { SIZES } from '../constants'
+import MarketsTabView from '../components/MarketsTabView'
+import MarketHeader from '../components/MarketsHeader'
+import Store from '../util/DataStore'
+import useFetchData from '../util/useFetchData'
+import React from 'react'
 
 export default function MarketsScreen() {
-  const fetchData = useFetchData();
+  const fetchData = useFetchData()
 
   return (
     <SafeAreaView style={styles.container}>
@@ -15,11 +16,11 @@ export default function MarketsScreen() {
         <MarketsTabView />
       </Store.Provider>
     </SafeAreaView>
-  );
+  )
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: StatusBar.currentHeight! + SIZES.small,
   },
-});
+})

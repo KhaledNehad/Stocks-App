@@ -1,9 +1,9 @@
-import { View, StyleSheet, TextInput, Text } from 'react-native';
-import React from 'react';
-import { COLORS, FONTS, SIZES } from '../constants';
-import { MaterialIcons } from '@expo/vector-icons';
+import { View, StyleSheet, TextInput, Text } from 'react-native'
+import React from 'react'
+import { COLORS, FONTS, SIZES } from '../constants'
+import { MaterialIcons } from '@expo/vector-icons'
 
-const searchHandler = () => {};
+const searchHandler = () => {}
 
 const MarketHeader = () => {
   return (
@@ -12,9 +12,9 @@ const MarketHeader = () => {
         <Text style={styles.largeTitle}>Markets</Text>
         <View style={{ marginTop: SIZES.small, paddingHorizontal: 10 }}>
           <View style={styles.searchContainer}>
-            <MaterialIcons name='search' size={24} color={COLORS.white} />
+            <MaterialIcons name="search" size={24} color={COLORS.white} />
             <TextInput
-              placeholder='Search markets'
+              placeholder="Search markets"
               placeholderTextColor={COLORS.lightGray}
               style={{ flex: 1, color: COLORS.white }}
               onChangeText={searchHandler}
@@ -23,12 +23,11 @@ const MarketHeader = () => {
         </View>
       </View>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 55,
     paddingVertical: SIZES.medium,
     paddingHorizontal: SIZES.medium,
     backgroundColor: COLORS.primaryColor,
@@ -48,6 +47,6 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.bold,
     color: COLORS.white,
   },
-});
+})
 
-export default MarketHeader;
+export default MarketHeader

@@ -1,39 +1,41 @@
-import { View, FlatList, Text, StyleSheet } from 'react-native';
-import React, { useRef, useState } from 'react';
-import MarketItemList from './MarketItemList';
-import BottomSheet from '../components/BottomSheet';
+import { View, Text, StyleSheet } from 'react-native'
+import React, { useRef, useState } from 'react'
+import MarketItemList from './MarketItemList'
+import BottomSheet from '../components/BottomSheet'
 import {
   BottomSheetModalProvider,
   BottomSheetModal,
-} from '@gorhom/bottom-sheet';
-import { StockData } from '../types/MarketDataType';
-import { useDataStore } from '../util/DataStore';
+} from '@gorhom/bottom-sheet'
+import { StockData } from '../types/MarketDataType'
+import { useDataStore } from '../util/DataStore'
+import { FlashList } from '@shopify/flash-list'
 
 const JuniorMarketTab = () => {
-  const { data, isLoading, error } = useDataStore();
+  const { data, isLoading, error } = useDataStore()
 
   const [selectedCompanyData, setSelectedCompanyData] =
-    useState<StockData | null>(null);
+    useState<StockData | null>(null)
 
-  const BottomSheetModalRef = useRef<BottomSheetModal>(null);
+  const BottomSheetModalRef = useRef<BottomSheetModal>(null)
 
   const handlePressListItem = (item: StockData) => {
-    setSelectedCompanyData(item);
-    BottomSheetModalRef.current?.present();
-  };
+    setSelectedCompanyData(item)
+    BottomSheetModalRef.current?.present()
+  }
 
   if (isLoading) {
-    return <Text>Loading...</Text>;
+    return <Text>Loading...</Text>
   }
 
   if (error) {
-    return <Text>Error: {error.message}</Text>;
+    return <Text>Error: {error.message}</Text>
   }
 
   return (
     <View style={styles.container}>
-      <FlatList
+      <FlashList
         data={data}
+        estimatedItemSize={200}
         keyExtractor={(item) => item.stockSymbol}
         renderItem={({ item }) => (
           <MarketItemList
@@ -58,12 +60,12 @@ const JuniorMarketTab = () => {
         />
       </BottomSheetModalProvider>
     </View>
-  );
-};
+  )
+}
 
-export default JuniorMarketTab;
+export default JuniorMarketTab
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-});
+})
