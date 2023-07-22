@@ -28,7 +28,6 @@ const MarketHeader = () => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 55,
     paddingVertical: SIZES.medium,
     paddingHorizontal: SIZES.medium,
     backgroundColor: COLORS.primaryColor,

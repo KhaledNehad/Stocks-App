@@ -3,25 +3,19 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 
 import { useTheme } from 'react-native-paper';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 
-import { Feather, Octicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
+
+import MainTabScreen from './screens/MainTabScreen';
+import DrawerContent from './screens/DrawerContent';
 import { COLORS } from './constants';
-import PortfolioScreen from './screens/PortfolioScreen';
-import NewsScreen from './screens/NewsScreen';
-import MarketsScreen from './screens/MarketsScreen';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-export type RootStackParamList = {
-  Portfolio: undefined;
-  Markets: undefined;
-  News: undefined;
-};
 
 export default function App() {
-  const Tab = createMaterialBottomTabNavigator();
+  const Drawer = createDrawerNavigator();
   const theme = useTheme();
   theme.colors.secondaryContainer = 'transparent';
   const [fontLoaded] = useFonts({
@@ -33,61 +27,35 @@ export default function App() {
   });
   if (!fontLoaded) return null;
 
-  const portfolioIcon = ({ color }: { color: string }) => (
-    <Feather name='pie-chart' size={26} color={color} />
-  );
-
-  const marketsIcon = ({ color }: { color: string }) => (
-    <Octicons
-      name='arrow-switch'
-      size={26}
-      color={color}
-      style={{ transform: [{ rotate: '90deg' }] }}
-    />
-  );
-
-  const newsIcon = ({ color }: { color: string }) => (
-    <MaterialCommunityIcons
-      name='application-outline'
-      size={26}
-      color={color}
-    />
-  );
+  
 
   return (
     <NavigationContainer>
-      <Tab.Navigator
-        initialRouteName='Markets'
-        activeColor={COLORS.primaryColor}
-        inactiveColor={COLORS.black}
-      >
-        <Tab.Screen
-          name='Portfolio'
-          component={PortfolioScreen}
-          options={{
-            tabBarLabel: 'Portfolio',
-            tabBarIcon: portfolioIcon,
-          }}
-        />
-        <Tab.Screen
-          name='Markets'
-          component={MarketsScreen}
-          options={{
-            tabBarLabel: 'Markets',
-            tabBarIcon: marketsIcon,
-          }}
-        />
-
-        <Tab.Screen
-          name='News'
-          component={NewsScreen}
-          options={{
-            tabBarLabel: 'News',
-            tabBarIcon: newsIcon,
-          }}
-        />
-      </Tab.Navigator>
-      <StatusBar style='auto' />
+      <Drawer.Navigator  drawerContent={
+        props => <DrawerContent {...props} />
+      } >
+        <Drawer.Screen name='Home' component={MainTabScreen} options={{
+          headerTintColor: COLORS.white,
+          headerTitle: '',
+          headerStyle: {
+            backgroundColor: COLORS.primaryColor,
+            elevation: 0,
+            shadowOpacity: 0,
+          },
+          headerTitleStyle: {
+            fontFamily: 'InterBold',
+          },
+          headerRight: () => (
+            <MaterialCommunityIcons
+              name='dots-vertical'
+              size={26}
+              color={COLORS.white}
+              style={{ marginRight: 20 }}
+            />
+          )
+        }} />
+     </Drawer.Navigator>
+      <StatusBar style='light' />
     </NavigationContainer>
   );
 }
