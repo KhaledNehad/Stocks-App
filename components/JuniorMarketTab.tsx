@@ -1,4 +1,4 @@
-import { View, FlatList, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import React, { useRef, useState } from 'react';
 import MarketItemList from './MarketItemList';
 import BottomSheet from '../components/BottomSheet';

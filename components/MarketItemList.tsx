@@ -2,7 +2,6 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { StockData } from '../types/MarketDataType';
 import { COLORS, FONTS, SIZES } from '../constants';
-import Charts from './Charts';
 import { formatCurrency } from '../util/formatCurrency';
 
 type MarketItemListProps = {
