@@ -1,8 +1,6 @@
-import { View, Text } from 'react-native'
 import React from 'react'
 
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { Feather, Octicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -45,7 +43,7 @@ const MainTabScreen = () => (
       component={PortfolioScreen}
       options={{
         tabBarLabel: 'Portfolio',
-        tabBarColor: '#000',
+        tabBarColor: COLORS.black,
         tabBarIcon: portfolioIcon
       }} />
     
@@ -54,7 +52,7 @@ const MainTabScreen = () => (
       component={MarketsScreen}
       options={{
         tabBarLabel: 'Markets',
-        tabBarColor: '#000',
+        tabBarColor: COLORS.black,
         tabBarIcon: marketsIcon
       }} />
     
@@ -63,7 +61,7 @@ const MainTabScreen = () => (
       component={NewsScreen}
       options={{
         tabBarLabel: 'News',
-        tabBarColor: '#000',
+        tabBarColor: COLORS.black,
         tabBarIcon: newsIcon
       }} />
 

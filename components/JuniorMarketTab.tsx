@@ -8,6 +8,8 @@ import {
 } from '@gorhom/bottom-sheet';
 import { StockData } from '../types/MarketDataType';
 import { useDataStore } from '../util/DataStore';
+import { FlashList } from "@shopify/flash-list";
+
 
 const JuniorMarketTab = () => {
   const { data, isLoading, error } = useDataStore();
@@ -32,8 +34,9 @@ const JuniorMarketTab = () => {
 
   return (
     <View style={styles.container}>
-      <FlatList
+      <FlashList
         data={data}
+        estimatedItemSize={200}
         keyExtractor={(item) => item.stockSymbol}
         renderItem={({ item }) => (
           <MarketItemList
