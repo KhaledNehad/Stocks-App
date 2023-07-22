@@ -5,7 +5,7 @@ export default function NewsScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <Text>New Screen</Text>
+        <Text>News Screen</Text>
       </View>
     </SafeAreaView>
   );

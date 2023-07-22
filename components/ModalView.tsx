@@ -3,9 +3,8 @@ import React from 'react';
 import { StockData } from '../types/MarketDataType';
 import { COLORS, FONTS, SIZES } from '../constants';
 import { formatCurrency } from '../util/formatCurrency';
-
-import { useNavigation } from '@react-navigation/native';
 import Button from './Button';
+import Charts from './Charts';
 
 type ModalViewProps = {
   data: StockData | null;
@@ -14,8 +13,6 @@ type ModalViewProps = {
 export const { width: SIZE } = Dimensions.get('window');
 
 const ModalView: React.FC<ModalViewProps> = ({ data }) => {
-  const navigation = useNavigation();
-
   return (
     <ScrollView>
       <View style={styles.container}>

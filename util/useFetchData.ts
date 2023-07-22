@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { StockData } from '../types/MarketDataType';
 
 const useFetchData = () => {
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<StockData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);
 

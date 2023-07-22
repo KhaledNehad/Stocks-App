@@ -19,7 +19,7 @@ const Charts = ({ weekChanges }: ChartsProps) => {
     <ChartPathProvider
       data={{ points: weekChanges, smoothingStrategy: 'bezier' }}
     >
-      <ChartPath height={SIZE / 2} stroke='yellow' width={SIZE} />
+      <ChartPath height={SIZE / 2} stroke='black' width={SIZE} />
       <ChartDot style={{ backgroundColor: 'blue' }} />
     </ChartPathProvider>
   );

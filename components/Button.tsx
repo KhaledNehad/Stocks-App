@@ -7,12 +7,12 @@ type ButtonProps = {
   stylesButton?: object;
 };
 const Button: React.FC<ButtonProps> = ({ stylesText, title, stylesButton }) => {
-  const RenderContentIconOrText = () => {
+  const RenderButtonText = () => {
     return <Text style={stylesText}>{title && title}</Text>;
   };
   return (
     <TouchableOpacity style={stylesButton}>
-      <RenderContentIconOrText />
+      <RenderButtonText />
     </TouchableOpacity>
   );
 };
