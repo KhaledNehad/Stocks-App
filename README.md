@@ -1,4 +1,10 @@
-# Stocks App
+# Stocks Market App
+
+- [Stocks Market App](#stocks-market-app)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [What is included in this project](#what-is-included-in-this-project)
+  - [Screenshots](#screenshots)
 
 ## Installation
 
@@ -9,7 +15,7 @@
 
 1. To run app: `Expo start`
 
-## What has been done!
+## What is included in this project
 
     - Create Stocks App using Expo CLI with Typescript.
     - Using React Navigation for navigation.
@@ -22,18 +28,8 @@
       - Current price
       - Percentage Gain
 
-    - Create function to convert price in dollars.
     - fetch data from the API using axios.
-    - Uncompleted Graph view for the stock.
-    - Change the UX to open the Stock details in a sheet instead of a new page.
     - Eslint and Prettier configuration.
-
-## What I was planing to do more!
-
-    - Add a search functionally to search for stocks.
-    - add a graph view for the stock in both Markets and Details page.
-    - Add a functionally to add stocks to the Portfolio.
-    - Unit Tests.
 
 ## Screenshots
 
